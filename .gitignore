@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual env
+venv/
+.venv/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Uploaded files (PDF)
+data/uploads/*
+!data/uploads/.gitkeep
+
+# Vector DB (Chroma)
+vector_db/*
+!vector_db/.gitkeep
+
+# Alembic cache
+alembic/__pycache__/
