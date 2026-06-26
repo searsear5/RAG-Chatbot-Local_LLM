@@ -1,37 +1,11 @@
-System Architecture
-User
-  │
-  ▼
-FastAPI API
-  │
-  ├── Upload PDF
-  │       │
-  │       ▼
-  │   PDF Loader
-  │       │
-  │       ▼
-  │   Text Splitter
-  │       │
-  │       ▼
-  │   Embedding Model
-  │       │
-  │       ▼
-  │   ChromaDB
-  │
-  └── Ask Question
-          │
-          ▼
-     Retriever
-          │
-          ▼
-      Ollama LLM
-          │
-          ▼
-     Generated Answer
-          │
-          ▼
-    PostgreSQL History
+Upload Flow
+User -> /upload -> Load PDF -> Chunking -> Embedding(generate vector) -> Chroma DB(store in vector_db)
 
+Question Flow
+User -> /ask -> RetrievalQA(calls Vector Search (retriever),LLM ) -> Retriever (Vector Search in Chroma) -> LLM (Ollama - llama3.2) -> Generated Answer -> return (answer,sources)
+
+Save History
+Answer + Sources -> PostgreSQL (chat_history)
 
 ฺBUILD AND START
 
