@@ -9,3 +9,4 @@ class QuestionRequest(BaseModel):
 class AnswerResponse(BaseModel):
 
     answer: str
+    sources: list

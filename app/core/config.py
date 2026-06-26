@@ -9,6 +9,8 @@ class Settings(BaseSettings):
 
     CHROMA_PATH: str
 
+    OLLAMA_EMBEDDING_MODEL: str
+
     class Config:
         env_file = ".env"
 

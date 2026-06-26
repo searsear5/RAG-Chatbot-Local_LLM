@@ -5,7 +5,7 @@ from sqlalchemy import Text
 from sqlalchemy import DateTime
 
 from datetime import datetime
-
+from zoneinfo import ZoneInfo
 from app.db.database import Base
 
 
@@ -19,7 +19,7 @@ class Document(Base):
 
     upload_time = Column(
         DateTime,
-        default=datetime.utcnow
+        default=lambda: datetime.now(ZoneInfo("Asia/Bangkok"))
     )
 
 
@@ -33,7 +33,9 @@ class ChatHistory(Base):
 
     answer = Column(Text)
 
+    sources = Column(Text)
+
     created_at = Column(
         DateTime,
-        default=datetime.utcnow
+        default=lambda: datetime.now(ZoneInfo("Asia/Bangkok"))
     )

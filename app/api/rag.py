@@ -51,14 +51,19 @@ def ask(
         db: Session = Depends(get_db)
 ):
 
-    answer = ask_question(request.question)
+    result = ask_question(request.question)
+
+    answer = result['answer']
+    sources = result['sources']
 
     save_chat(
-        db,
-        request.question,
-        answer
+        db=db,
+        question=request.question,
+        answer=answer,
+        sources=sources
     )
 
     return {
-        "answer": answer
+        "answer": answer,
+        "sources": sources
     }

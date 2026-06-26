@@ -36,3 +36,5 @@ vector_db/*
 
 # Alembic cache
 alembic/__pycache__/
+
+notebook.md
