@@ -34,16 +34,15 @@ FastAPI API
 
 
 ฺBUILD AND START
+
+    ollama serve
+
     docker compose up -d --build
 
     docker ps
+
 OPEN SWAGGER
     http://localhost:8000/docs
 
-OLLAMA
-    http://host.docker.internal:11434
 
 
-
-ตอนนี้อาจแก้ให้ fastAPI กลับไปรันบนเครื่องไม่อยู่บน container
-    uvicorn app.main:app --reload
